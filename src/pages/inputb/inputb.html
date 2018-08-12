@@ -1,0 +1,47 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title class="kanit">ข้อมูลตำแหน่ง B</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="kanit">
+  <ion-card>
+    ตำแหน่งวัดมุม B <p></p><p></p>
+    <img src="assets/imgs/b.jpg" />
+  </ion-card>
+  <ion-card>
+    <ion-card-content>
+
+      <form novalidate [formGroup]="reportForm">
+        <ion-list inset>
+          <ion-item>
+            <ion-label>ระยะแนวลาด (BL)</ion-label>
+            <ion-input type="number" formControlName="bl">{{localtion}}</ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>มุมองศาดิ่ง (BAH)</ion-label>
+            <ion-input type="number" formControlName="bah"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>มุมอาซีมุท (BAZ)</ion-label>
+            <ion-input type="number" formControlName="baz"></ion-input>
+          </ion-item>
+
+        </ion-list>
+        <ion-row>
+          <ion-col>
+            <button ion-button color="primary" block round navPop>ย้อนกลับ</button>
+          </ion-col>
+          <ion-col>
+            <button ion-button color="secondary" block round [disabled]="!reportForm.valid" (click)='gotoC()'>ดำเนินการต่อ</button>
+          </ion-col>
+        </ion-row>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

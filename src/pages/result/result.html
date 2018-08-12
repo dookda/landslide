@@ -1,0 +1,74 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title class="kanit">ผลการวิเคราะห์</ion-title>
+    <!-- 
+    <ion-buttons end>
+      <button ion-button icon-only (click)="send2Database()">
+        <ion-icon ios="ios-send" md="md-send"></ion-icon>
+      </button>
+    </ion-buttons> -->
+
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="kanit">
+  <div id="map2" class="map"></div>
+
+  <!-- <ion-scroll scrollX="true" scrollY="true" class="data"> -->
+  <ion-card>
+    <ion-card-content>
+      <ion-item-group>
+        <ion-item-divider color="light">
+          <h1>ผลการคำนวณค่าพิกัดจุด B</h1>
+        </ion-item-divider>
+        <ion-item>ระยะแนวราบ: {{bls | number}} เมตร</ion-item>
+        <ion-item>พิกัดแกน E: {{be | number}} เมตร</ion-item>
+        <ion-item>พิกัดแกน N: {{bn | number}} เมตร</ion-item>
+        <ion-item>ค่าความสูง: {{bz | number}} เมตร</ion-item>
+      </ion-item-group>
+      <p></p>
+      <ion-item-group>
+        <ion-item-divider color="light">
+          <h1>ผลการคำนวณค่าพิกัดจุด C</h1>
+        </ion-item-divider>
+        <ion-item>ระยะแนวราบ: {{cls | number}} เมตร</ion-item>
+        <ion-item>พิกัดแกน E: {{ce | number}} เมตร</ion-item>
+        <ion-item>พิกัดแกน N: {{cn | number}} เมตร</ion-item>
+        <ion-item>ค่าความสูง: {{cz | number}} เมตร</ion-item>
+      </ion-item-group>
+      <p></p>
+      <ion-item-group>
+        <ion-item-divider color="light">ฟืิแ
+          <h1>ผลการคำนวณค่า Slope</h1>
+        </ion-item-divider>
+        <ion-item>ความสูงจาก C->B: {{hcb | number}} เมตร</ion-item>
+        <ion-item>ระยะทางจาก C->B: {{scb | number}} เมตร</ion-item>
+        <ion-item>ค่า Slope จาก C->B: {{slcb | number}} %</ion-item>
+        <ion-item>ค่า Slope จาก C->B: {{anbc | number}} องศา</ion-item>
+      </ion-item-group>
+
+
+
+    </ion-card-content>
+  </ion-card>
+
+
+  <ion-card>
+    <ion-card-content>
+      <form novalidate [formGroup]="reportForm">
+        <ion-list inset>
+          <ion-item>
+            <ion-label>ชื่อผู้รายงาน</ion-label>
+            <ion-input type="text" formControlName="fname"></ion-input>
+          </ion-item>
+        </ion-list>
+        <button ion-button color="secondary" block round [disabled]="!reportForm.valid" (click)='send2Database()'>ส่งข้อมูล</button>
+      </form>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- </ion-scroll> -->
+</ion-content>

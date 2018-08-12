@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-navbar>
+    <!-- <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button> -->
+    <ion-title class="kanit">รังวัดดินถล่ม</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="kanit">
+  <div id="map" class="map"></div>
+  <ion-card>
+    <ion-card-content>
+      <ion-row>
+        <ion-col>
+          <ion-label>สัญลักษณ์</ion-label>
+          <img class="legend" src="assets/imgs/legend2.png" />
+        </ion-col>
+        <ion-col>
+
+          <ion-item text-wrap>
+            งานวิจัยนี้สนับสนุนโดย
+          </ion-item>
+          <img class="legend" src="assets/imgs/trfuru.png" />
+        </ion-col>
+      </ion-row>
+
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-content>
+      <ion-label>เพิ่มข้อมูลจากการรังวัด</ion-label>
+      <form novalidate [formGroup]="reportForm">
+        <ion-list inset>
+
+          <ion-item>
+            <ion-label>พิกัด (AE,AN)</ion-label>
+            <ion-input type="text" placeholder="{{pos}}" disabled></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>ความสูงจากระดับน้ำทะเล (AZ)</ion-label>
+            <ion-input type="number" placeholder="{{altitude}}" formControlName="az"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>ความสูงขาตั้งกล้อง (HI)</ion-label>
+            <ion-input type="number" formControlName="hi"></ion-input>
+          </ion-item>
+
+        </ion-list>
+
+        <button ion-button color="secondary" block round [disabled]="!reportForm.valid" (click)='gotoB()'>เพิ่มข้อมูล</button>
+      </form>
+
+    </ion-card-content>
+  </ion-card>
+
+
+
+</ion-content>

@@ -1,0 +1,25 @@
+page-result {
+  @font-face {
+    font-family: 'Kanit';
+    src: url('../assets/fonts/Kanit-Regular.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+  }
+  .kanit {
+    font-family: 'Kanit';
+  }
+  .map {
+    width: 100%;
+    height: 50%;
+  }
+  .data {
+    height: 50%;
+  }
+  .alertDanger {
+    background-color: white;
+    color: red;
+    button {
+      color: red;
+    }
+  }
+}
